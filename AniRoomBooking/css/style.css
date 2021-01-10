@@ -1,0 +1,320 @@
+#submitButton{
+	right : 500px;
+}
+.btn {
+	width : 200px;
+}
+
+
+
+#button{
+	left: 28%;
+}
+.header{
+	background-color: black;
+	color: white;
+}
+/* nav bar */
+
+.navBar{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+
+
+.navBar li{
+	float: right;
+	width: 125px;
+}
+.navBar li a{
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+.navBar li a:hover{
+	background-color: #111;
+}
+
+/* Slider */
+*{
+	box-sizing: border-box;
+}
+.Slides{
+	display: none;
+}
+img {vertical-align: middle;
+height: 500px;
+width: 100%;
+}
+
+.slideshow-container{
+	position: relative;
+	margin: auto;
+}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/* Grid Container */
+.grid-container{
+	display: grid;
+	
+	grid-gap: 10px;
+	background-color: black;
+	padding: 10px;
+	
+}
+
+.grid-container > div{
+background-color: rgba(255, 255, 255, 0.8);
+  text-align: right;
+}
+.grid1 {
+  grid-row-start: 1;
+  grid-row-end: 29;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  
+  
+}
+.grid2 {
+grid-row-start: 1;
+grid-row-end: 25;
+grid-column-start: 2;
+grid-column-end: 4;
+}
+
+.grid3 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 25;
+grid-row-end: 29;
+ 
+
+}
+
+/* Pagination */
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
+
+.pagination a.active {
+  background-color:#4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+/* book button */
+#button_grid_Available{
+ background-color: #f44336; /* Red */
+  border: none;
+  height: 100%;
+  width: 100%;
+  color: white;
+  padding: 32px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 32px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  cursor: not-allowed;
+  
+  
+}
+#button_grid_Available{
+background-color: 	#00ff00; /* Green */
+  border: none;
+  height: 100%;
+  width: 100%;
+  color: white;
+  /*padding: 16px 16px;*/
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 32px;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+	
+}
+
+/* Summary Page */
+.summaryHeader{
+	background-color: black;
+	color: white;
+	height: 75px;
+	position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 35px;
+}
+.summaryGrid{
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 10px;
+	background-color: black;
+	padding: 10px;
+}
+
+.summaryGrid > div {
+  background-color: rgba(165,163,162, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+.summaryGrid1{
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+.summaryGrid2{
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	
+}
+.summaryGrid3{
+	grid-row-start:3;
+	grid-row-end:4;
+	grid-column-start:1;
+	grid-column-end: 2;
+	
+}
+.summaryGrid4{
+	grid-row-start:3;
+	grid-row-end:4;
+	grid-column-start:3;
+	grid-column-end: 4;
+	
+}
+
+#cancel{
+ background-color: #f44336; /* Red */
+  border: none;
+  height: 100%;
+  width: 100%;
+  color: black;
+  padding: 50px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 32px;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+}
+
+#book{
+ background-color: #6FEF4E; /* Green */
+  border: none;
+  height: 100%;
+  width: 100%;
+  color: black;
+  padding: 50px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 32px;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+}
+
+/* Admin Page Grid I*/
+.adminPageContainer{
+	display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  background-color: black;
+  padding: 10px;
+}
+
+.adminPageContainer > div{
+	background-color: rgba(165,163,162, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+.adminGrid1 {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+.adminGrid2 {
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start:1;
+	grid-row-end: 2;
+}
+.adminGrid3{
+	grid-column-start:2;
+	grid-column-end:3;
+	grid-row-start:2;
+	grid-row-end:3;
+}
+.adminGrid4{
+	grid-column-start:1;
+	grid-column-end:2;
+	grid-row-start:3;
+	grid-row-end:4;
+}
+.adminGrid5{
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+
+/* Admin Submit */
+.Admin_Submit {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+
+
+
+
+

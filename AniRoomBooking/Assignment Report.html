@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Assignment Report</title>
+</head>
+<body>
+
+<h1>Login Details</h1>
+
+<pre>
+
+		emailID = "anik@gmail.com" customerPassword = "Anik14"
+		
+
+
+</pre>
+
+<h1>Admin Login</h1>
+<pre>
+
+			
+		employeeID = "B082413" pin = "4321"
+		employeeID = "B0117863" pin = "6871"
+		employeeID = "B012456" pin = "9012"
+		employeeID = "B035920" pin = "6207"
+
+</pre>
+<h1>SQL TO create Databases</h1>
+<h3>Admin Login Table</h3>
+
+<pre>
+		create table adminLogin(ID varchar(50), 
+		pin varchar(50))
+</pre>
+<h3>Customer Login Table</h3>
+<pre>
+		create table Anik_Customer(
+		firstName varchar(50),
+		lastName varchar(50),
+		emailID varchar(50),
+		customerPassword varchar(20),
+		Address varchar(50),
+		city varchar(20),
+		eirCode varchar(10)
+		)
+</pre>
+<h3>booking Status Table</h3>
+<pre>
+			create table bookingStatus(
+			ID varchar(50),
+			Room varchar(50),
+			roomStatus varchar(50)
+			)
+
+</pre>
+
+<h1>OverView of the Website</h1>
+<ul>
+<li>User will register into the system through the registration form. Each fields in the form carry out validation to allow the user to follow the certain pattern while filling the form. 
+After sucessfully submit the form all the information are store in the database.</li>
+<li>After register, the user is redirect to the login field.
+ Here the user enter the login details and get into the website. On the login field the validation is carry out to ensure that all the field are filled. Once the user login sucessfully, session is generated which allows the user to see the profile page as well as to confirm the room booking.</li>
+<li>On the home page the user gets the status of room dynamically. If the room is available, then the <b>“available”</b> text appears on the submit button. If someone books the room then the text on the submit button change to <b>“Booked”</b>. 
+Once the “booked” status appears on the button the user is no longer able to use that button as the button gets disable.</li>
+<li>If the user clicks on the submit button whose having the text “available”, then the page is redirect to the static page where the user gets details of the room as well as the additional features. If the user click on the book button then that room is booked on the ID of the user. 
+After sucessfully booked then the website redirect to the profile section where the user can see his details.</li>
+<li>
+Admin has to login into the system on there employee ID and pin number. On successful login admin can see the status of all the room. By clicking on the submit button, admin can change the status of the room from booked to available, which allows the user to book that room again.
+</li>
+</ul>
+<h1>WebPages Description.</h1>
+<h3>1. Registration Page.</h3>
+<pre>
+<b>Functions:</b> The function of this page is use to store the information of the user into the customer login table.
+<b>Techique used:</b>
+<b>1.HTML:</b> The Registration form is created by using HTML tags.
+<b>2. Bootstrap:</b> The Form is design by using open tool-kit named as <b>Bootstrap</b>.
+<b>How it works:</b> The user fills the columns and on submit every text on the field gets store into the database.
+<b>Addition features:</b> 1. Validation task is carry out on every columns.
+	2. If user left the field empty pop-up message will be display indicating the field is empty.
+	3. Validation is carry out by using Regular Expression. So that, user will submit the data in the particular format.
+<b>SQL statement use:</b> "INSERT INTO customerDetails" + "(firstName, lastName, emailID, customerPassword, Address, city, eirCode) VALUES " + "(?,?,?,?,?,?,?);" ;
+
+<h3>2. Login Page.</h3>
+<b>Functions:</b> The function of this page is use to allow those user who have done registration.
+<b>Techique used:</b>
+	<b>1.HTML:</b> The Registration form is created by using HTML tags.
+	<b>2. Bootstrap:</b> The Form is design by using open tool-kit named as <b>Bootstrap</b>.
+<b>How it works:</b> The user will enter the login information if the login information is present in the database then user able to get in into the database else they will not.
+<b>Addition features:</b> 1. Validation task is carry out on every columns.
+	2. If user left the field empty pop-up message will be display indicating the field is empty.
+	3. Validation is carry out by using Regular Expression. So that, user will submit the data in the particular format.
+	4. Once the user gets login Session is generated.
+	5. User can logout from this page and every session that is generated gets remove.
+<b>SQL statement use:</b> "select emailID, customerPassword  from customerDetails where emailID=? and customerPassword=?";
+
+<h3>3. Admin Login Page.</h3>
+<b>Functions:</b> The function of this page is to check verifies the user is admin or not.
+<b>Techique used:</b>
+	<b>1.HTML:</b> The Registration form is created by using HTML tags.
+	<b>2. Bootstrap:</b> The Form is design by using open tool-kit named as <b>Bootstrap</b>.
+<b>How it works:</b> The admin will enter the preset employeeID and pin. Once the information gets verifies then admin will allow to get into the admin page.
+<b>Addition features:</b> 1. Validation task is carry out on every columns.
+	2. If admin left the field empty pop-up message will be display indicating the field is empty.
+	3. Once the admin gets login Session is generated.
+<b>SQL statement use:</b> "select * from adminLogin where ID=? and pin=?";
+
+<h3>4. Home Page.</h3>
+<b>Functions:</b> On this page user gets the information which rooms are available and which rooms are booked.
+<b>Techique used:</b>
+	<b>1. HTML:</b> The page is created using the html tags.
+	<b>2. CSS:</b> External CSS file is use to desgin the page.
+	<b>3. JavaScript:</b> JavaScript is use to allow the Slider on the page to move.
+<b>Addition features:</b> 
+	1. User can browse this page without login i.e without generating the session.
+	2. Here JSTL sql tags and JSTL core tags are use to display the status of the room on the submit button.
+<b>SQL statement use:</b> 
+select roomStatus from bookingStatus where Room = ?;
+
+<h3>5. Confirmation Page:</h3>
+<b>Functions:</b> This page is use to get the confirmation of booking from the user.
+<b>Techique used:</b>
+	<b>1. HTML:</b> The page is created using the html tags.
+	<b>2. CSS:</b> External CSS file is use to desgin the page.
+<b>Addition features:</b>
+1. User cannot get into this page without login.
+2. Caching techqiue is use such that whenever user gets logout after this page the user is not allow to get into this page after pressing the back button.
+
+<h3>6. Account Page:</h3>
+<b>Functions:</b> On this page user gets his/her profile details.
+<b>Addition Features:</b>
+1. The user can't get into this page without login.
+2. Caching technique is use so that login details not get store into the cache memory.
+3. JSTL sql tag is use to fetch the data dynamically.
+<b>SQL statements:</b>
+1. SELECT firstName from customerDetails where emailID = ?. 
+2. SELECT lastName from customerDetails where emailID =?.
+3. SELECT Room from bookingStatus where ID = ?.
+3. SELECT roomStatus from bookingStatus where ID = ?.
+
+<h3>7. Admin Home Page.</h3>
+<b>Functions:</b> On this page admin gets the status of the room. By clicking the submit button admin can change the submit button from booked to available.
+<b>Techique used:</b>
+	<b>1. HTML:</b> The page is created using the html tags.
+	<b>2. CSS:</b> External CSS file is use to desgin the page.
+<b>SQL statements:</b>
+Select roomStatus from bookingStatus where Room = ?;
+</pre>
+</body>
+</html>
